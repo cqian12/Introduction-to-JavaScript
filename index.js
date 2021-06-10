@@ -156,123 +156,35 @@ Use the game function below to do the following:
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-const computerVar = Math.random()
+let computerVar = Math.random()
+
+if (computerVar <= 1/3) {
+  computerVar = 'rock'
+} else if (computerVar > 1/3 && computerVar <= 2/3) {
+  computerVar= 'paper'
+} else {
+  computerVar = 'scissors'
+}
 
 function game(player,computer){
-  /*let computerChoice = 'tbd'
-
-  if (computer <= 1/3) {
-    computerChoice = 'paper'
-  } else if (computer > 1/3 && computer <= 2/3) {
-    computerChoice = 'scissors'
-  } else {
-    computerChoice = 'rock'
-  } */
-
-  if (computer <= 1/3) { //computer picked rock
-    if (player = 'rock') {
-      return "it's a tie"
-    } else if (player = 'paper') {
+  if (computer === player) { 
+    return "it's a tie"
+  } else if (player === 'rock' && computer === 'paper') {
+    return 'you lose!'
+  } else if (player === 'rock' && computer === 'scissors') {
+    return 'you win!'
+  } else if (player === 'paper' && computer === 'rock') {
       return 'you win!'
-    } else {
+  } else if (player === 'paper' && computer === 'scissors') {
       return 'you lose!'
-    }
-  } else if (computer > 1/3 && computer <= 2/3) { //computer picked paper
-    if (player = 'rock') {
-      return 'you lose!'
-    } else if (player = 'paper') {
-      return "it's a tie"
-    } else {
-      return 'you win!'
-    } 
-  } else { //computer picked scissors
-    if (player = 'rock') {
-      return 'you win!'
-    } else if (player = 'paper') {
-      return 'you lose!'
-    } else {
-      return "it's a tie"
-    } 
-  }
+  } else if (player === 'scissors' && computer === 'rock') {
+    return 'you lose!'
+  } else if (player === 'scissors' && computer === 'paper') {
+    return 'you win!'
+  } 
 }
-
-  /*if (player = 'rock') { //input rock
-    if (computerChoice = 'rock') {
-      return "it's a tie"
-    } else if (computerChoice = 'paper') {
-      return 'you lose!'
-    } else {
-      return 'you win!'
-    }
-  } else {
-    return 'player did not pick rock'
-    /*if (player = 'paper') { //input paper
-      if (computerChoice = 'rock') {
-        return 'you win!'
-      } else if (computerChoice = 'scissors') {
-        return 'you lose!'
-      } else {
-        return "it's a tie"
-      }
-    } else { //input scissors
-    if (computerChoice = 'rock') {
-      return 'you lose!'
-    } else if (computerChoice = 'paper') {
-      return 'you win!'
-    } else {
-      return "it's a tie"
-    }*/
-
-console.log('task 4')
-console.log(game('paper',computerVar))
+console.log(game('rock',computerVar))
 console.log(computerVar)
-/*
-let computer = Math.random();
-
-function game(player, computer){
-  let computerChoice = 'rock'
-
-  if (computer < 1/3) {
-    computerChoice = 'rock'
-  } else if (computer < 2/3) {
-    computerChoice = 'paper'
-  } else {
-    computerChoice = 'scissors'
-  }
-
-  console.log('you picked ' + player)
-  console.log('computer picked ' + computerChoice)
-
-  if (player = 'rock') { //input rock
-    if (computerChoice = 'rock') {
-      return "it's a tie"
-    } else if (computerChoice = 'paper') {
-      return 'you lose!'
-    } else {
-      return 'you win!'
-    }
-  } else {
-    if (player = 'paper') { //input paper
-      if (computerChoice = 'rock') {
-        return 'you win!'
-      } else if (computerChoice = 'scissors') {
-        return 'you lose!'
-      } else {
-        return "it's a tie"
-      }
-    } else { //input scissors
-    if (computerChoice = 'rock') {
-      return 'you lose!'
-    } else if (computerChoice = 'paper') {
-      return 'you win!'
-    } else {
-      return "it's a tie"
-    }
-  }
-}
-*/
-
-
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -312,13 +224,12 @@ Using the annoyingSong function below do the following:
 */
 
 function annoyingSong(bottles){
-    while (bottles >= 0) {
-      let oneLess = bottles - 1
-      return bottles + ' bottles of soda on the wall, ' + bottles + ' bottles of soda, take one down pass it around ' + oneLess + ' bottles of soda on the wall'
-      bottles--
+    for (let i=bottles; i > 0; i--) {
+      return i + ' bottles of soda on the wall, ' + i + ' bottles of soda, take one down pass it around ' + (i-1) + ' bottles of soda on the wall'
     }
   }
-  annoyingSong(5)
+  
+  console.log(annoyingSong(5))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
